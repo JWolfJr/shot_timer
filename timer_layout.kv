@@ -1,0 +1,55 @@
+#:kivy 2.1.0
+
+<CustomLayout>
+    canvas.before:
+        Color:
+            rgba: (242/255,242/255,242/255,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<TimerLayout>
+    CustomLayout:
+        Label:
+            id: time_field
+            color: (0,0,0,1)
+            text: "Shot time: "
+            halign: "center"
+            valign: "top"
+            font_size: 50
+            size_hint: 1, .9
+            pos_hint: {'center_x':.5, 'top_y':.7}
+
+
+        Button:
+            id: add_shot
+            font_size: 32
+            size_hint: .3, .2
+            pos_hint: {'center_x':.15, 'center_y': .1}
+            text: "Start"
+            background_normal: ''
+            color: (0,0,0,1)
+            background_color: (0,1,0,1)
+            on_press: root.add_shot()
+
+        Button:
+            id: stop_time
+            font_size: 32
+            size_hint: .3, .2
+            pos_hint: {'center_x':.5, 'bottom_y': .1}
+            text: "Stop"
+            background_normal: ''
+            color: (0,0,0,1)
+            background_color: (1,0,0,1) 
+            on_press: root.stop_time()
+
+        Button:
+            id: clear
+            font_size: 32
+            size_hint: .3, .2
+            pos_hint: {'center_x':.85, 'center_y': .1}
+            text: "Clear"
+            background_normal: ''
+            color: (0,0,0,1)
+            background_color: (238/255,250/255,0/255,1)
+            on_press: root.clear()
